@@ -1,4 +1,4 @@
-.analyzedLyricsContainer {
+.lyricsContainer {
   display: flex;
   overflow-y: scroll;
   white-space: pre-wrap;

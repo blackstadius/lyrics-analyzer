@@ -1,0 +1,50 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 32px;
+  gap: 48px;
+}
+
+.headingOne {
+  text-decoration: underline wavy palevioletred;
+  font-size: 5rem;
+}
+.headingThree {
+  font-weight: 200;
+  text-align: center;
+}
+
+.lyricsContainer {
+  display: flex;
+  width: 75%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lyrics {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-content: center;
+  background-color: rosybrown;
+  background-image: linear-gradient(to right, rosybrown, palevioletred);
+  color: #121212;
+  min-width: 260px;
+  height: 750px;
+  border-radius: 4;
+  flex-wrap: wrap;
+  font-weight: 700;
+  --mask:
+    radial-gradient(32.29px at 45.6px 50%, #000 99%, #0000 101%) 0
+      calc(50% - 48px) / 51% 96px repeat-y,
+    radial-gradient(32.29px at -21.6px 50%, #0000 99%, #000 101%) 24px 50% /
+      calc(51% - 24px) 96px repeat-y,
+    radial-gradient(32.29px at calc(100% - 45.6px) 50%, #000 99%, #0000 101%)
+      100% calc(50% - 48px) / 51% 96px repeat-y,
+    radial-gradient(32.29px at calc(100% + 21.6px) 50%, #0000 99%, #000 101%)
+      calc(100% - 24px) 50% / calc(51% - 24px) 96px repeat-y;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}

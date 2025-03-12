@@ -1,26 +1,15 @@
 'use client';
 
 import { useContext } from 'react';
-import { LyricsContext } from '@/app/contexts/LyricsContext/LyricsContext';
 import { LyricsErrorContext } from '@/app/contexts/LyricsError/LyricsErrorContext';
+import style from './Lyrics.module.css';
 
-const Lyrics = () => {
-  const { lyrics } = useContext(LyricsContext);
+const Lyrics = ({ lyrics }: { lyrics: string }) => {
   const { lyricsError } = useContext(LyricsErrorContext);
 
-  return (
-    <div
-      style={{
-        display: 'flex',
-        whiteSpace: 'pre-wrap',
-        textTransform: 'uppercase',
-        textAlign: 'center',
-        margin: '36px',
-      }}
-    >
-      {lyricsError || lyrics}
-    </div>
-  );
+  return lyrics ? (
+    <div className={style.lyricsContainer}>{lyricsError || lyrics}</div>
+  ) : null;
 };
 
 export default Lyrics;

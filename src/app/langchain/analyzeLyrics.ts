@@ -6,7 +6,7 @@ const analyzeLyrics = async (lyrics: string) => {
   try {
     const model = new ChatOpenAI({
       model: 'gpt-4',
-      apiKey: process.env.OPENAI_API_KE,
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
     const messages = [
