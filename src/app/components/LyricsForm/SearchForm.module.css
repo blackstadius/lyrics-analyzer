@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 24px;
+  /* border: solid, 4px, pink;
+  border-radius: '8px'; */
+
+  input {
+    min-width: 260;
+    border-radius: 4;
+    padding: 12;
+    border: solid 2 white;
+    height: 42px;
+    font-size: 1.2rem;
+    background-color: transparent;
+  }
+
+  input:focus {
+    border-color: pink;
+    outline: none;
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+  }
+
+  button {
+    background-color: transparent;
+    height: 42;
+    width: 120;
+    font-size: 1.2rem;
+    border: solid 2 white;
+    border-radius: 4;
+    font-weight: 400;
+    font-family: 'Poppins';
+  }
+}

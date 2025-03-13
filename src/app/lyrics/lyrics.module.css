@@ -7,20 +7,12 @@
   gap: 48px;
 }
 
-.headingOne {
-  text-decoration: underline wavy palevioletred;
-  font-size: 5rem;
-}
-.headingThree {
-  font-weight: 200;
-  text-align: center;
-}
-
 .lyricsContainer {
   display: flex;
   width: 75%;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 24px;
 }
 
 .lyrics {
@@ -32,7 +24,7 @@
   background-image: linear-gradient(to right, rosybrown, palevioletred);
   color: #121212;
   min-width: 260px;
-  height: 750px;
+  min-height: 750px;
   border-radius: 4;
   flex-wrap: wrap;
   font-weight: 700;

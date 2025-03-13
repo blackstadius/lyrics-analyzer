@@ -1,6 +1,6 @@
 'use client';
 import { useActionState, useContext, useEffect } from 'react';
-import styles from './LyricsForm.module.css';
+import styles from './SearchForm.module.css';
 import { LyricsContext } from '@/app/contexts/LyricsContext/LyricsContext';
 import getLyrics from '@/app/actions/getLyrics';
 import { LyricsErrorContext } from '@/app/contexts/LyricsError/LyricsErrorContext';
@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 
 const initialState = '';
 
-export default function LyricsForm() {
+const LyricsForm = () => {
   const { setLyrics } = useContext(LyricsContext);
   const { setLyricsError } = useContext(LyricsErrorContext);
 
@@ -27,14 +27,7 @@ export default function LyricsForm() {
 
   return (
     <motion.form action={formAction} className={styles.form}>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '16px',
-          justifyContent: 'center',
-        }}
-      >
+      <div className={styles.inputContainer}>
         <input required name="artist" placeholder="Artist" />
         <input required name="title" placeholder="Title" />
       </div>
@@ -47,4 +40,5 @@ export default function LyricsForm() {
       </motion.button>
     </motion.form>
   );
-}
+};
+export default LyricsForm;
