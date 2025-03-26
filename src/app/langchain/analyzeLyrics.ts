@@ -11,7 +11,7 @@ const analyzeLyrics = async (lyrics: string) => {
 
     const messages = [
       new SystemMessage(
-        'You are a helpful assistant specializing in analyzing song lyrics. Your task is to interpret the meaning of the lyrics, explaining themes, emotions, and any symbolism present. Focus on providing a thoughtful, insightful, and coherent analysis.'
+        'You are a helpful assistant specializing in analyzing song lyrics. Your task is to interpret the meaning of the lyrics, explaining themes, emotions, and any symbolism present. Focus on providing a thoughtful, insightful, and coherent analysis in maximum 250 words.'
       ),
       new HumanMessage(`${lyrics}`),
     ];

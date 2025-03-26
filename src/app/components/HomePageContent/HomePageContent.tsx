@@ -1,9 +1,11 @@
 'use client';
 import { motion, useAnimate } from 'motion/react';
-import SearchForm from '../LyricsForm/SearchForm';
+import SearchForm from '../SearchForm/SearchForm';
 import styles from './HomePageContent.module.css';
 import { useEffect } from 'react';
 import Hi from '../../../../public/Hi!.svg';
+import Image from 'next/image';
+import backgroundImage from '@/../public/record-player-1851576_1280.jpg';
 
 const sequence: any[] = [
   ['#hiHeading', { scale: [0.4, 1] }, { ease: 'circInOut', duration: 1 }],
@@ -23,19 +25,22 @@ const sequence: any[] = [
 
 const MainContent = () => {
   const [scope, animate] = useAnimate();
-  console.log(Hi);
+
   useEffect(() => {
     animate(sequence);
   }, []);
 
   return (
     <div ref={scope} className={styles.background}>
+      <div className={styles.imageContainer}>
+        <Image src={backgroundImage} fill alt="background" />
+      </div>
       <Hi className={styles.headingOne} id="hiHeading" />
       <div className={styles.content}>
         <motion.div id="searchHeading">
-          <h1 className={styles.headingThree}>
+          <h2 className={styles.headingThree}>
             Search for the lyrics you want to understand
-          </h1>
+          </h2>
         </motion.div>
         <SearchForm />
       </div>

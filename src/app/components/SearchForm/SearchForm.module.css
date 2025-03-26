@@ -36,11 +36,12 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
-    color: white;
+    color: #ef3e36;
   }
 
   button {
     background-color: transparent;
+    color: #ef3e36;
     height: 42;
     width: 120;
     font-size: 1.2rem;

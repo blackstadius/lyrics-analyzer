@@ -1,10 +1,9 @@
 'use server';
+
 const getLyrics = async (
-  prevState: any,
-  formData: any
+  artist: string,
+  title: string
 ): Promise<string | { error: string }> => {
-  const artist = formData.get('artist');
-  const title = formData.get('title');
   const baseUrl = process.env.LYRICS_BASE_URL;
 
   try {
