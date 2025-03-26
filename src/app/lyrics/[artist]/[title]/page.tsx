@@ -4,7 +4,6 @@ import { useParams } from 'next/navigation';
 import analyzeLyrics from '@/app/langchain/analyzeLyrics';
 import Loading from '@/app/components/Loading/Loading';
 import Lyrics from '@/app/components/Lyrics/Lyrics';
-import AnalyzedLyrics from '@/app/components/AnalyzedLyrics/AnalyzedLyrics';
 import styles from './Lyrics.module.css';
 import { Oooh_Baby } from 'next/font/google';
 import LyricsProvider from '@/app/contexts/LyricsContext/LyricsProvider';
