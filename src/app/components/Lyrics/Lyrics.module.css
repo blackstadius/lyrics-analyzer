@@ -1,73 +1,14 @@
-.section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
-
-.imageContainer {
-  border-radius: 8px;
-  padding: 24px;
-  height: 500px;
-  width: 100%;
-  position: relative;
-  left: -20%;
-
-  @media (max-width: 425px) {
-    left: 0;
-  }
-}
-
-.imageContainerRight {
-  border-radius: 8px;
-  padding: 24px;
-  height: 500px;
-  width: 100%;
-  position: relative;
-  left: 20%;
-
-  @media (max-width: 425px) {
-    left: 0;
-  }
-}
-
-.image {
-  object-fit: cover;
-  border-radius: 8px;
-  opacity: 30%;
-}
-
 .lyricsContainer {
   display: flex;
-  gap: 72px;
   flex-direction: column;
-  position: relative;
-  top: -15%;
-  margin: 36px;
-
-  @media (max-width: 425px) {
-    top: -10%;
-  }
+  justify-content: center;
 }
 
 .lyrics {
   white-space: pre-wrap;
   line-height: 2;
   text-align: center;
-}
-
-.analyzedLyrics {
-  white-space: pre-wrap;
-  line-height: 2;
-}
-
-.heading {
-  font-size: clamp(2em, 8vw + 1rem, 5em);
-  font-weight: 300;
-  letter-spacing: 8px;
-  text-align: center;
-  filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
-    drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
-    drop-shadow(0 0 50 #ff0066);
+  padding: 0 0 48px 0;
+  width: 75%;
+  margin: 0 auto;
 }

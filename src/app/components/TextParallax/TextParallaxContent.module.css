@@ -1,0 +1,9 @@
+.heading {
+  font-size: clamp(3em, 8vw + 1rem, 6em);
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-align: center;
+  filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
+    drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
+    drop-shadow(0 0 50 #ff0066);
+}

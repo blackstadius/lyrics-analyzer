@@ -38,9 +38,9 @@ const MainContent = () => {
       <Hi className={styles.headingOne} id="hiHeading" />
       <div className={styles.content}>
         <motion.div id="searchHeading">
-          <h2 className={styles.headingThree}>
+          <h1 className={styles.subheading}>
             Search for the lyrics you want to understand
-          </h2>
+          </h1>
         </motion.div>
         <SearchForm />
       </div>

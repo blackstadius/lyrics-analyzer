@@ -5,17 +5,10 @@ import analyzeLyrics from '@/app/langchain/analyzeLyrics';
 import Loading from '@/app/components/Loading/Loading';
 import Lyrics from '@/app/components/Lyrics/Lyrics';
 import styles from './Lyrics.module.css';
-import { Oooh_Baby } from 'next/font/google';
-import LyricsProvider from '@/app/contexts/LyricsContext/LyricsProvider';
-import LyricsErrorProvider from '@/app/contexts/LyricsError/LyricsErrorProvider';
 import getLyrics from '@/app/actions/getLyrics';
-import vinyl from '@/../public/vinyl-4808792_1280.jpg';
-import music from '@/../public/music-5705808_1280.jpg';
 
-const ooohBaby = Oooh_Baby({
-  weight: ['400'],
-  subsets: ['latin'],
-});
+const vinyl = '/vinyl-4808792_1280.jpg';
+const music = '/music-5705808_1280.jpg';
 
 const LyricsPage = () => {
   const [analyzedLyrics, setAnalyzedLyrics] = useState<string>('');
@@ -31,8 +24,8 @@ const LyricsPage = () => {
       if (lyrics && typeof lyrics === 'string') {
         setLyrics(lyrics.replace(/(\r\n|\r|\n)+/g, '\n'));
 
-        const result = await analyzeLyrics(lyrics);
-        setAnalyzedLyrics(result as string);
+        const analyzedLyrics = await analyzeLyrics(lyrics);
+        setAnalyzedLyrics(analyzedLyrics as string);
       }
       setIsLoading(false);
     };
@@ -43,26 +36,18 @@ const LyricsPage = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <LyricsProvider>
-      <LyricsErrorProvider>
-        <main className={styles.main}>
-          <Lyrics
-            content={lyrics}
-            imageTitle="vinyl"
-            image={vinyl}
-            heading="Lyrics"
-          />
-          <Lyrics
-            content={analyzedLyrics}
-            imageTitle="music"
-            image={music}
-            heading="Analyzed Lyrics"
-            isAnalyzedLyrics
-            imageRight
-          />
-        </main>
-      </LyricsErrorProvider>
-    </LyricsProvider>
+    <>
+      <Lyrics
+        heading="Lyrics"
+        content={lyrics || 'Could not find any lyrics'}
+        imageSrc={vinyl}
+      />
+      <Lyrics
+        heading="Analyzed Lyrics"
+        content={analyzedLyrics}
+        imageSrc={music}
+      />
+    </>
   );
 };
 
