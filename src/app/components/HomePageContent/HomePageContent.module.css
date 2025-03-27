@@ -1,6 +1,7 @@
 .background {
   height: 100vh;
   min-width: 320px;
+  gap: 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +33,7 @@
 
 .headingOne {
   height: 100vh;
-  width: 50%;
+  width: 60%;
   max-width: 480px;
   max-height: 480px;
   stroke: #fff;
@@ -58,4 +59,5 @@
 .subheading {
   font-weight: 400;
   text-align: center;
+  font-size: clamp(1em, 2vw + 1rem, 3em);
 }

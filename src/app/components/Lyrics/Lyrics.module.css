@@ -9,6 +9,8 @@
   line-height: 2;
   text-align: center;
   padding: 0 0 48px 0;
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
+  min-height: 50vh;
+  align-content: center;
 }
