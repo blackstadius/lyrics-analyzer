@@ -1,18 +1,5 @@
-import { ReactNode } from 'react';
-import styles from './Lyrics.module.css';
 import { TextParallaxContent } from '../TextParallax/TextParallax';
-
-const Content = ({
-  content,
-}: {
-  content: string;
-}): ReactNode | Promise<ReactNode> => {
-  return (
-    <div className={styles.lyricsContainer}>
-      <div className={styles.lyrics}>{content}</div>
-    </div>
-  );
-};
+import LyricsContent from './LyricsContent';
 
 const Lyrics = ({
   heading,
@@ -25,7 +12,7 @@ const Lyrics = ({
 }) => {
   return content ? (
     <TextParallaxContent imgUrl={imageSrc} heading={heading}>
-      <Content content={content} />
+      <LyricsContent content={content} />
     </TextParallaxContent>
   ) : null;
 };
