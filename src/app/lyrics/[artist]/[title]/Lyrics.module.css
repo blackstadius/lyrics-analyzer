@@ -4,3 +4,26 @@
   gap: 48px;
   flex-wrap: wrap;
 }
+
+.noResultContainer {
+  background-image: url(/vinyl-4808792_1280.jpg);
+  background-size: cover;
+  background-position: center center;
+
+  margin: 0px auto;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: clamp(3em, 8vw + 1rem, 6em);
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-align: center;
+  filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
+    drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
+    drop-shadow(0 0 50 #ff0066);
+}

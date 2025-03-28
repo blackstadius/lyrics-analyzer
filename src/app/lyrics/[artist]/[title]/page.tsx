@@ -4,11 +4,17 @@ import { useParams } from 'next/navigation';
 import analyzeLyrics from '@/app/langchain/analyzeLyrics';
 import Loading from '@/app/components/Loading/Loading';
 import Lyrics from '@/app/components/Lyrics/Lyrics';
-import styles from './Lyrics.module.css';
 import getLyrics from '@/app/actions/getLyrics';
+import styles from './Lyrics.module.css';
+import { Oooh_Baby } from 'next/font/google';
 
 const vinyl = '/vinyl-4808792_1280.jpg';
 const music = '/music-5705808_1280.jpg';
+
+const ooohBaby = Oooh_Baby({
+  weight: ['400'],
+  subsets: ['latin'],
+});
 
 const LyricsPage = () => {
   const [analyzedLyrics, setAnalyzedLyrics] = useState<string>('');
@@ -35,19 +41,21 @@ const LyricsPage = () => {
 
   return isLoading ? (
     <Loading />
-  ) : (
+  ) : lyrics ? (
     <>
-      <Lyrics
-        heading="Lyrics"
-        content={lyrics || 'Could not find any lyrics'}
-        imageSrc={vinyl}
-      />
+      <Lyrics heading="Lyrics" content={lyrics} imageSrc={vinyl} />
       <Lyrics
         heading="Analyzed Lyrics"
         content={analyzedLyrics}
         imageSrc={music}
       />
     </>
+  ) : (
+    <div className={styles.noResultContainer}>
+      <h1 className={`${ooohBaby.className} ${styles.heading}`}>
+        No search result
+      </h1>
+    </div>
   );
 };
 

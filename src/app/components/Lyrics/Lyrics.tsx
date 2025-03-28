@@ -10,11 +10,11 @@ const Lyrics = ({
   heading: string;
   imageSrc: string;
 }) => {
-  return content ? (
+  return (
     <TextParallaxContent imgUrl={imageSrc} heading={heading}>
       <LyricsContent content={content} />
     </TextParallaxContent>
-  ) : null;
+  );
 };
 
 export default Lyrics;
