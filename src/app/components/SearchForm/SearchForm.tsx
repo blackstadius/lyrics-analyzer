@@ -9,8 +9,18 @@ const LyricsForm = () => {
   return (
     <motion.form action={navigate} className={styles.form}>
       <div className={styles.inputContainer}>
-        <input required name="artist" placeholder="Artist" />
-        <input required name="title" placeholder="Title" />
+        <input
+          className={styles.input}
+          required
+          name="artist"
+          placeholder="Artist"
+        />
+        <input
+          className={styles.input}
+          required
+          name="title"
+          placeholder="Title"
+        />
       </div>
       <motion.button
         whileHover={{ scale: 1.1 }}
