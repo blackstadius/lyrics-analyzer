@@ -6,15 +6,10 @@ import Loading from '@/app/components/Loading/Loading';
 import Lyrics from '@/app/components/Lyrics/Lyrics';
 import getLyrics from '@/app/actions/getLyrics';
 import styles from './Lyrics.module.css';
-import { Oooh_Baby } from 'next/font/google';
+import StyledHeading from '@/app/components/StyledHeading/StyledHeading';
 
 const vinyl = '/vinyl-4808792_1280.jpg';
 const music = '/music-5705808_1280.jpg';
-
-const ooohBaby = Oooh_Baby({
-  weight: ['400'],
-  subsets: ['latin'],
-});
 
 const LyricsPage = () => {
   const [analyzedLyrics, setAnalyzedLyrics] = useState<string>('');
@@ -52,9 +47,7 @@ const LyricsPage = () => {
     </>
   ) : (
     <div className={styles.noResultContainer}>
-      <h1 className={`${ooohBaby.className} ${styles.heading}`}>
-        No search result
-      </h1>
+      <StyledHeading heading="No search result" />
     </div>
   );
 };

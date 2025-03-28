@@ -1,12 +1,6 @@
 import React, { ReactElement, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Oooh_Baby } from 'next/font/google';
-import styles from './TextParallaxContent.module.css';
-
-const ooohBaby = Oooh_Baby({
-  weight: ['400'],
-  subsets: ['latin'],
-});
+import StyledHeading from '../StyledHeading/StyledHeading';
 
 const IMG_PADDING = 16;
 
@@ -87,7 +81,7 @@ const OverlayCopy = ({ heading }: { heading: string }) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <h1 className={`${ooohBaby.className} ${styles.heading}`}>{heading}</h1>
+      <StyledHeading heading={heading} />
     </motion.div>
   );
 };
