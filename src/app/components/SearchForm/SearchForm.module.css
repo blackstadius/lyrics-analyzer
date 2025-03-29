@@ -8,10 +8,10 @@
   padding: 24px;
 
   .input {
-    min-width: 260;
-    border-radius: 4;
-    padding: 12;
-    border: solid 2 white;
+    min-width: 260px;
+    border-radius: 4px;
+    padding: 12px;
+    border: solid 2px white;
     height: 42px;
     font-size: 1.2rem;
     background-color: transparent;
