@@ -39,10 +39,13 @@ a:hover {
     drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
     drop-shadow(0 0 50 #ff0066);
 }
-a:active {
-  filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
-    drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
-    drop-shadow(0 0 50 #ff0066);
+
+@media (max-width: 768px) {
+  a:active {
+    filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
+      drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
+      drop-shadow(0 0 50 #ff0066);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
