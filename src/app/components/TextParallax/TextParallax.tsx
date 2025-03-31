@@ -1,8 +1,7 @@
 import React, { ReactElement, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import StyledHeading from '../StyledHeading/StyledHeading';
-
-const IMG_PADDING = 16;
+import styles from './TextParallaxContent.module.css';
 
 export const TextParallaxContent = ({
   imgUrl,
@@ -14,13 +13,8 @@ export const TextParallaxContent = ({
   children?: ReactElement;
 }) => {
   return (
-    <div
-      style={{
-        paddingLeft: IMG_PADDING,
-        paddingRight: IMG_PADDING,
-      }}
-    >
-      <div className="relative h-[150vh]">
+    <div className={styles.container}>
+      <div className={styles.contentContainer}>
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} />
       </div>
@@ -43,17 +37,13 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
     <motion.div
       style={{
         backgroundImage: `url(${imgUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: `calc(100vh - ${IMG_PADDING * 2}px)`,
-        top: IMG_PADDING,
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className={styles.imageContainer}
     >
       <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
+        className={styles.imageOverlay}
         style={{
           opacity,
         }}
@@ -79,7 +69,7 @@ const OverlayCopy = ({ heading }: { heading: string }) => {
         opacity,
       }}
       ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
+      className={styles.overlayCopyContainer}
     >
       <StyledHeading heading={heading} />
     </motion.div>

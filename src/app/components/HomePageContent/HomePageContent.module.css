@@ -1,7 +1,7 @@
 .background {
   height: 100vh;
   min-width: 320px;
-  gap: 64px;
+  gap: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +32,7 @@
 }
 
 .headingOne {
-  height: 100vh;
+  height: auto;
   width: 60%;
   max-width: 480px;
   max-height: 480px;
@@ -45,14 +45,15 @@
 
 @keyframes animate {
   0% {
-    filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
-      drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
-      drop-shadow(0 0 50 #ff0066);
+    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px #fff)
+      drop-shadow(0 0 10px #ff80b3) drop-shadow(0 0 30px #ff4d94)
+      drop-shadow(0 0 50px #ff0066);
   }
+
   100% {
-    filter: drop-shadow(0 0 3 #fff) drop-shadow(0 0 6 #fff)
-      drop-shadow(0 0 15 #ff80b3) drop-shadow(0 0 40 #ff4d94)
-      drop-shadow(0 0 60 #ff0066);
+    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px #fff)
+      drop-shadow(0 0 15px #ff80b3) drop-shadow(0 0 40px #ff4d94)
+      drop-shadow(0 0 60px #ff0066);
   }
 }
 

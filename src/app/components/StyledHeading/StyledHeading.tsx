@@ -8,7 +8,7 @@ const ooohBaby = Oooh_Baby({
 
 const StyledHeading = ({ heading }: { heading: string }) => {
   return (
-    <h1 className={`${ooohBaby.className} ${styles.heading}`}>{heading}</h1>
+    <h1 className={` ${styles.heading} ${ooohBaby.className}`}>{heading}</h1>
   );
 };
 
