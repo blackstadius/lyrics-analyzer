@@ -7,6 +7,7 @@ import Lyrics from '@/app/components/Lyrics/Lyrics';
 import getLyrics from '@/app/actions/getLyrics';
 import styles from './Lyrics.module.css';
 import StyledHeading from '@/app/components/StyledHeading/StyledHeading';
+import Link from 'next/link';
 
 const vinyl = '/vinyl-4808792_1280.jpg';
 const music = '/music-5705808_1280.jpg';
@@ -16,6 +17,7 @@ const LyricsPage = () => {
   const [isLoading, setIsLoading] = useState<Boolean>(false);
   const { artist, title } = useParams<{ artist: string; title: string }>();
   const [lyrics, setLyrics] = useState('');
+  const searchLinkContent = '< New Search';
 
   useEffect(() => {
     const getAnalyzedLyrics = async () => {
@@ -38,6 +40,9 @@ const LyricsPage = () => {
     <Loading />
   ) : lyrics ? (
     <>
+      <Link className={styles.link} href={'/'}>
+        {searchLinkContent}
+      </Link>
       <Lyrics heading="Lyrics" content={lyrics} imageSrc={vinyl} />
       <Lyrics
         heading="Analyzed Lyrics"

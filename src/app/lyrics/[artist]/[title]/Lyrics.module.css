@@ -19,11 +19,26 @@
 }
 
 .heading {
-  font-size: clamp(3em, 8vw + 1rem, 6em);
+  font-size: clamp(1em, 4vw + 1rem, 4em);
   font-weight: 300;
   letter-spacing: 8px;
   text-align: center;
   filter: drop-shadow(0 0 1 #fff) drop-shadow(0 0 3 #fff)
     drop-shadow(0 0 10 #ff80b3) drop-shadow(0 0 30 #ff4d94)
     drop-shadow(0 0 50 #ff0066);
+}
+
+.link {
+  position: relative;
+  padding: 32px;
+  top: 56px;
+  z-index: 2;
+  font-size: 24px;
+}
+
+@media (max-width: 425px) {
+  .link {
+    font-size: 16px; /* Smaller font-size for mobile devices */
+    top: 32px; /* Adjust position for mobile devices */
+  }
 }
