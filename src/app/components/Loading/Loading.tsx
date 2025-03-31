@@ -1,11 +1,11 @@
 import styles from './Loading.module.css';
 import Analyzing from '../../../../public/Analyzing.svg';
 
-const AnimatedNote = () => {
+const Loading = () => {
   return (
     <div className={styles.container}>
-      <Analyzing className={styles.drawAnimation} />
+      <Analyzing className={styles.loading} />
     </div>
   );
 };
-export default AnimatedNote;
+export default Loading;
