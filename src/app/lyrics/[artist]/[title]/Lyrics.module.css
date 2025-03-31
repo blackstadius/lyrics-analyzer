@@ -38,7 +38,7 @@
 
 @media (max-width: 425px) {
   .link {
-    font-size: 16px; /* Smaller font-size for mobile devices */
-    top: 32px; /* Adjust position for mobile devices */
+    font-size: 16px;
+    top: 32px;
   }
 }
