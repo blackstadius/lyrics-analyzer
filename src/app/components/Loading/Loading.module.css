@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.drawAnimation {
+/* .drawAnimation {
   width: 560px;
   max-width: 80%;
   height: 560px;
@@ -29,5 +29,31 @@
   }
   100% {
     stroke-dashoffset: 2000;
+  }
+} */
+
+.loading {
+  height: auto;
+  width: 60%;
+  max-width: 480px;
+  max-height: 480px;
+  stroke: #fff;
+  animation-name: animate;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px #fff)
+      drop-shadow(0 0 10px #ff80b3) drop-shadow(0 0 30px #ff4d94)
+      drop-shadow(0 0 50px #ff0066);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px #fff)
+      drop-shadow(0 0 15px #ff80b3) drop-shadow(0 0 40px #ff4d94)
+      drop-shadow(0 0 60px #ff0066);
   }
 }
