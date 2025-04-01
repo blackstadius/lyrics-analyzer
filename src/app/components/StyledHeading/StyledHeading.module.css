@@ -3,6 +3,7 @@
   font-weight: 300;
   letter-spacing: 8px;
   text-align: center;
+  padding: 0px 24px;
   filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px #fff)
     drop-shadow(0 0 10px #ff80b3) drop-shadow(0 0 30px #ff4d94)
     drop-shadow(0 0 50px #ff0066);

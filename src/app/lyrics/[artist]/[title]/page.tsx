@@ -36,9 +36,11 @@ const LyricsPage = () => {
     getAnalyzedLyrics();
   }, []);
 
-  return isLoading ? (
-    <Loading />
-  ) : lyrics ? (
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return lyrics ? (
     <>
       <Link className={styles.link} href={'/'}>
         {searchLinkContent}
@@ -51,8 +53,13 @@ const LyricsPage = () => {
       />
     </>
   ) : (
-    <div className={styles.noResultContainer}>
-      <StyledHeading heading="No search result" />
+    <div className={styles.imageContainer}>
+      <div className={styles.noResultContainer}>
+        <Link className={styles.link} href={'/'}>
+          {searchLinkContent}
+        </Link>
+        <StyledHeading heading="No search result" />
+      </div>
     </div>
   );
 };
