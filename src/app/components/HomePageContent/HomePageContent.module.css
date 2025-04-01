@@ -1,11 +1,12 @@
 .background {
-  height: 100vh;
+  height: 100%;
   min-width: 320px;
   gap: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .imageContainer {
