@@ -48,7 +48,7 @@ const LyricsPage = () => {
 
   return lyrics ? (
     <>
-      <Link className={styles.link} href={'/'}>
+      <Link className={styles.link} style={{ position: 'absolute' }} href={'/'}>
         {searchLinkContent}
       </Link>
       <Lyrics heading="Lyrics" content={lyrics} imageSrc={vinyl} />
@@ -61,7 +61,11 @@ const LyricsPage = () => {
   ) : (
     <div className={styles.imageContainer}>
       <div className={styles.noResultContainer}>
-        <Link className={styles.link} href={'/'}>
+        <Link
+          className={styles.link}
+          style={{ alignSelf: 'flex-start' }}
+          href={'/'}
+        >
           {searchLinkContent}
         </Link>
         <StyledHeading heading="No search result" />
