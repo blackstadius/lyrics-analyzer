@@ -6,7 +6,12 @@ import { navigate } from '@/app/actions/navigate';
 
 const LyricsForm = () => {
   return (
-    <motion.form action={navigate} className={styles.form}>
+    <motion.form
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      action={navigate}
+      className={styles.form}
+    >
       <div className={styles.inputContainer}>
         <input
           autoFocus
@@ -25,7 +30,7 @@ const LyricsForm = () => {
         />
       </div>
       <motion.button
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.1, backgroundColor: '#fff' }}
         whileTap={{ scale: 0.95 }}
         type="submit"
       >

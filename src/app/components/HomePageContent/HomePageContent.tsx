@@ -7,21 +7,7 @@ import Hi from '../../../../public/Hi.svg';
 import Image from 'next/image';
 import backgroundImage from '@/../public/record-player-1851576_1280.jpg';
 
-const sequence: any[] = [
-  ['#hiHeading', { scale: [0.4, 1] }, { ease: 'circInOut', duration: 1 }],
-  [
-    '#searchHeading',
-    { scale: [0, 1] },
-    { scale: { type: 'spring', visualDuration: 0.4, bounce: 0.5 } },
-    { opacity: [0, 1] },
-  ],
-  [
-    'form',
-    { scale: [0, 1] },
-    { scale: { type: 'spring', visualDuration: 0.4, bounce: 0.5 } },
-    { opacity: [0, 1] },
-  ],
-];
+const sequence: any[] = [['#hiHeading', { scale: [0, 1], opacity: [0, 1] }]];
 
 const MainContent = () => {
   const [scope, animate] = useAnimate();
@@ -37,7 +23,10 @@ const MainContent = () => {
       </div>
       <Hi className={styles.headingOne} id="hiHeading" />
       <div className={styles.content}>
-        <motion.div id="searchHeading">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
           <h1 className={styles.subheading}>
             Search for the lyrics you want to understand
           </h1>
