@@ -19,7 +19,7 @@ const MainContent = () => {
   return (
     <div ref={scope} className={styles.background}>
       <div className={styles.imageContainer}>
-        <Image src={backgroundImage} fill alt="background" />
+        <Image src={backgroundImage} fill alt="background" priority />
       </div>
       <Hi className={styles.headingOne} id="hiHeading" />
       <div className={styles.content}>
