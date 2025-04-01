@@ -8,6 +8,7 @@ import getLyrics from '@/app/actions/getLyrics';
 import styles from './Lyrics.module.css';
 import StyledHeading from '@/app/components/StyledHeading/StyledHeading';
 import Link from 'next/link';
+import testData from './testdata';
 
 const vinyl = '/vinyl-4808792_1280.jpg';
 const music = '/music-5705808_1280.jpg';
@@ -19,21 +20,26 @@ const LyricsPage = () => {
   const [lyrics, setLyrics] = useState('');
   const searchLinkContent = '< New Search';
 
+  // useEffect(() => {
+  //   const getAnalyzedLyrics = async () => {
+  //     setIsLoading(true);
+  //     const lyrics = await getLyrics(artist, title);
+
+  //     if (lyrics && typeof lyrics === 'string') {
+  //       setLyrics(lyrics.replace(/(\r\n|\r|\n)+/g, '\n'));
+
+  //       const analyzedLyrics = await analyzeLyrics(lyrics);
+  //       setAnalyzedLyrics(analyzedLyrics as string);
+  //     }
+  //     setIsLoading(false);
+  //   };
+
+  //   getAnalyzedLyrics();
+  // }, []);
+
   useEffect(() => {
-    const getAnalyzedLyrics = async () => {
-      setIsLoading(true);
-      const lyrics = await getLyrics(artist, title);
-
-      if (lyrics && typeof lyrics === 'string') {
-        setLyrics(lyrics.replace(/(\r\n|\r|\n)+/g, '\n'));
-
-        const analyzedLyrics = await analyzeLyrics(lyrics);
-        setAnalyzedLyrics(analyzedLyrics as string);
-      }
-      setIsLoading(false);
-    };
-
-    getAnalyzedLyrics();
+    setLyrics(testData.lyrics);
+    setAnalyzedLyrics(testData.analyzedLyrics);
   }, []);
 
   if (isLoading) {
