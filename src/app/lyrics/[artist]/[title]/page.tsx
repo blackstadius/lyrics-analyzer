@@ -24,38 +24,41 @@ const LyricsPage = () => {
   });
   const searchLinkContent = '< New Search';
 
-  useEffect(() => {
-    const getLyricsData = async () => {
-      try {
-        setIsLoading(true);
-        const lyrics = await getLyrics(artist, title);
-
-        const analyzedLyrics = await analyzeLyrics(lyrics);
-        const strippedLyrics = lyrics.replace(/(\r\n|\r|\n)+/g, '\n');
-
-        setLyricsData({
-          ...lyricsData,
-          lyrics: strippedLyrics,
-          analyzedLyrics,
-        });
-      } catch (error: any) {
-        if (error.errorType === 'NoLyricsFoundError') {
-          setLyricsData({ ...lyricsData, error: 'No lyrics found' });
-        } else {
-          setLyricsData({ ...lyricsData, error: 'Something went wrong' });
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    getLyricsData();
-  }, []);
-
   // useEffect(() => {
-  //   setLyrics(testData.lyrics);
-  //   setAnalyzedLyrics(testData.analyzedLyrics);
+  //   const getLyricsData = async () => {
+  //     try {
+  //       setIsLoading(true);
+  //       const lyrics = await getLyrics(artist, title);
+
+  //       const analyzedLyrics = await analyzeLyrics(lyrics);
+  //       const strippedLyrics = lyrics.replace(/(\r\n|\r|\n)+/g, '\n');
+
+  //       setLyricsData({
+  //         ...lyricsData,
+  //         lyrics: strippedLyrics,
+  //         analyzedLyrics,
+  //       });
+  //     } catch (error: any) {
+  //       if (error.errorType === 'NoLyricsFoundError') {
+  //         setLyricsData({ ...lyricsData, error: 'No lyrics found' });
+  //       } else {
+  //         setLyricsData({ ...lyricsData, error: 'Something went wrong' });
+  //       }
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   getLyricsData();
   // }, []);
+
+  useEffect(() => {
+    setLyricsData({
+      ...lyricsData,
+      lyrics: testData.lyrics,
+      analyzedLyrics: testData.analyzedLyrics,
+    });
+  }, []);
 
   if (isLoading) {
     return <Loading />;
