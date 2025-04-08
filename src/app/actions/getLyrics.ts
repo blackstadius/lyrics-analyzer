@@ -1,18 +1,26 @@
 'use server';
-import { NoLyricsFoundError } from '../errors/NoLyricsFoundError';
 
-const getLyrics = async (artist: string, title: string): Promise<string> => {
+const getLyrics = async (artist: string, title: string): Promise<any> => {
   const baseUrl = process.env.LYRICS_BASE_URL;
 
   const response = await fetch(`${baseUrl}${artist}/${title}`);
 
   if (!response.ok) {
-    throw Error('Could not get the lyrics, please try again');
+    return {
+      error: true,
+      errorType: 'NO_LYRICS_FOUND',
+      message: 'No lyrics found',
+    };
   }
   const result = await response.json();
 
   if (!result.lyrics) {
-    throw new NoLyricsFoundError();
+    // Return custom error for no lyrics found
+    return {
+      error: true,
+      errorType: 'NO_LYRICS_FOUND',
+      message: 'No lyrics found',
+    };
   }
 
   return result.lyrics;

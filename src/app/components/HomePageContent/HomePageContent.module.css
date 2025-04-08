@@ -10,6 +10,7 @@
 @media screen and (min-width: 600px) {
   .background {
     justify-content: center;
+    position: static;
   }
 }
 
